@@ -15,6 +15,8 @@
 
 ## 🏁 クイックスタート
 
+> 📖 **詳細は [QUICK-START.md](QUICK-START.md) を参照**
+
 ### 1. テンプレートから新規リポジトリを作成
 
 ```bash
@@ -102,6 +104,7 @@ mvp-business-template/
 | ファイル | タイミング |
 |----------|------------|
 | [project-kickoff.md](checklists/project-kickoff.md) | プロジェクト開始時 |
+| [phase-transition.md](checklists/phase-transition.md) | フェーズ移行時 |
 | [mvp-launch.md](checklists/mvp-launch.md) | MVPリリース前 |
 | [pivot-decision.md](checklists/pivot-decision.md) | ピボット検討時 |
 
