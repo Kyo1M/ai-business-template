@@ -50,7 +50,11 @@ mvp-business-template/
 │
 ├── templates/            # 再利用可能なテンプレート
 ├── prompts/              # AIプロンプト集
-├── journal/              # 活動記録
+├── notes/                # メモ・議事録
+│   ├── meetings/         # 議事録
+│   ├── ideas/            # アイデアメモ
+│   ├── research/         # 調査メモ
+│   └── misc/             # その他
 └── checklists/           # チェックリスト
 ```
 
@@ -118,6 +122,18 @@ mvp-business-template/
 | [weekly-report.md](templates/weekly-report.md) | 週次進捗レポート |
 | [decision-log.md](templates/decision-log.md) | 意思決定の記録 |
 | [retrospective.md](templates/retrospective.md) | 振り返り |
+| [meeting-notes.md](templates/meeting-notes.md) | 議事録 |
+
+## 📂 メモ・議事録
+
+`notes/` フォルダでメモや議事録を管理します。詳細は [notes/README.md](notes/README.md) を参照。
+
+| フォルダ | 内容 |
+|----------|------|
+| [meetings/](notes/meetings/) | 議事録・ミーティングメモ |
+| [ideas/](notes/ideas/) | アイデアメモ・ブレスト記録 |
+| [research/](notes/research/) | 調査・リサーチメモ |
+| [misc/](notes/misc/) | その他のメモ |
 
 ## 🔄 推奨ワークフロー
 

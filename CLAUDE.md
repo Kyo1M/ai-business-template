@@ -18,7 +18,11 @@ docs/
 templates/          # 再利用可能なテンプレート
 prompts/            # AIプロンプト集
 checklists/         # チェックリスト
-journal/            # 活動記録（YYYY/MM/配下に日付ファイル）
+notes/              # メモ・議事録
+├── meetings/       # 議事録
+├── ideas/          # アイデアメモ
+├── research/       # 調査メモ
+└── misc/           # その他
 ```
 
 ## フェーズの流れ
@@ -72,9 +76,11 @@ status: draft | review | approved
 2. メタ情報テンプレートを含めて作成
 3. README.mdの一覧に追加（重要なもののみ）
 
-### 活動記録を追加する場合
-1. `journal/YYYY/MM/` フォルダに `YYYY-MM-DD-タイトル.md` で作成
-2. 学びや気づきは `docs/04_growth/learnings.md` にも反映
+### メモ・議事録を追加する場合
+1. `notes/` 配下の適切なフォルダを選択（meetings, ideas, research, misc）
+2. `YYYY-MM-DD-タイトル.md` の形式でファイルを作成
+3. 議事録は `templates/meeting-notes.md` を参照
+4. 学びや気づきは `docs/04_growth/learnings.md` にも反映
 
 ### 仮説を更新する場合
 1. `docs/01_discovery/hypothesis.md` を編集
