@@ -1,0 +1,42 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Node (if applicable)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build
+dist/
+build/
+out/
+
+# Cache
+.cache/
+*.log
+
+# Secrets
+*.pem
+*.key
+
+# Temporary
+tmp/
+temp/
+
+# Project specific
+# (Add project-specific ignores here)
+
