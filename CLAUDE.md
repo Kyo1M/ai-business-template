@@ -101,10 +101,11 @@ status: draft | review | approved
 
 プロジェクトを理解するために、以下の順で読むことを推奨：
 
-1. `docs/01_discovery/hypothesis.md` - 現在の仮説
-2. `docs/01_discovery/target-persona.md` - ターゲット顧客
-3. `docs/02_strategy/mvp-definition.md` - MVP定義
-4. `docs/02_strategy/roadmap.md` - ロードマップ
+1. `docs/01_discovery/founder-profile.md` - 創業者プロフィール（強み・経験・動機）
+2. `docs/01_discovery/hypothesis.md` - 現在の仮説
+3. `docs/01_discovery/target-persona.md` - ターゲット顧客
+4. `docs/02_strategy/mvp-definition.md` - MVP定義
+5. `docs/02_strategy/roadmap.md` - ロードマップ
 
 
 

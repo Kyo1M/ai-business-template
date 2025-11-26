@@ -26,6 +26,14 @@
 
 ## 2. Discovery（発見）フェーズ準備
 
+### 創業者プロフィール ⭐ 最初に推奨
+
+- [ ] [founder-profile.md](../docs/01_discovery/founder-profile.md) を記入した
+  - [ ] 経歴・スキルを整理した
+  - [ ] 強み・弱みを自己分析した
+  - [ ] 原体験・動機を言語化した
+  - [ ] 利用可能なリソース（時間・資金・ネットワーク）を把握した
+
 ### 仮説
 
 - [ ] [hypothesis.md](../docs/01_discovery/hypothesis.md) に初期仮説を記入した
