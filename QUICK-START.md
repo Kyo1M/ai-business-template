@@ -66,7 +66,7 @@ AI: 「議事録を確認しました。以下の点を更新します：
 
 ```bash
 # テンプレートからプロジェクトを作成
-git clone https://github.com/YOUR_USERNAME/mvp-business-template.git my-project
+git clone https://github.com/YOUR_USERNAME/ai-business-template.git my-project
 cd my-project
 rm -rf .git
 git init

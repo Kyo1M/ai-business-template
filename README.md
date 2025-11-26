@@ -1,15 +1,15 @@
-# 🚀 MVP Business Template
+# 🤖 AI Business Template
 
-新規事業・MVP開発プロジェクトのためのドキュメントテンプレート集です。
+**AIツールとの対話を通じて事業開発を進める** ためのドキュメントテンプレート集です。
 
 ## 📋 このテンプレートについて
 
-アイデア検証からMVPリリース、グロースまでの各フェーズで必要なドキュメントを構造化して管理できます。
+Cursor、Claude Code、GitHub Copilot などのAIツールと連携しながら、アイデア検証からMVPリリース、グロースまでの各フェーズで必要なドキュメントを作成・改善していきます。
 
 ### 特徴
 
+- **AI活用前提**: AIとの対話でドキュメントを作成・改善
 - **フェーズ別に整理**: Discovery → Strategy → Development → Growth
-- **AI連携対応**: Claude Code / Cursor等のAIツールと連携しやすい設計
 - **すぐに使える**: 空のテンプレートではなく、記入例・ガイド付き
 - **チェックリスト完備**: 重要な意思決定ポイントを見逃さない
 
@@ -22,7 +22,7 @@
 ```bash
 # GitHubの「Use this template」ボタンを使用するか、
 # 手動でクローンして使用
-git clone https://github.com/YOUR_USERNAME/mvp-business-template.git my-new-project
+git clone https://github.com/YOUR_USERNAME/ai-business-template.git my-new-project
 cd my-new-project
 rm -rf .git
 git init
@@ -41,7 +41,7 @@ git init
 ## 📁 リポジトリ構成
 
 ```
-mvp-business-template/
+ai-business-template/
 ├── docs/
 │   ├── 00_policy/        # プロジェクト運用ルール
 │   ├── 01_discovery/     # 発見・検証フェーズ
