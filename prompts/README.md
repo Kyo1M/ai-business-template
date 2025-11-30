@@ -28,6 +28,7 @@
 |-----------|------|
 | [competitive-research.md](analysis/competitive-research.md) | 競合調査 |
 | [data-insight.md](analysis/data-insight.md) | データからインサイト抽出 |
+| [business-idea-review.md](analysis/business-idea-review.md) | 事業アイデアの厳格レビュー |
 
 ### development/（開発）
 

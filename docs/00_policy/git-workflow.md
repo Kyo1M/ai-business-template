@@ -248,3 +248,4 @@ git fetch origin
 | `/create-branch` | ブランチ名を生成して作成・移動 |
 | `/generate-commit-message` | コミットメッセージを生成 |
 | `/no-sugarcoating` | 忖度無しの正直なフィードバックを求める |
+| `/review-business-idea` | 事業アイデアを厳格にレビュー |
