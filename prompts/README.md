@@ -11,6 +11,7 @@
 | `ideation/` | アイデア発想 | ブレスト、アイデア整理 |
 | `analysis/` | 分析 | データ分析、市場調査 |
 | `development/` | 開発 | 仕様作成、コード生成 |
+| `mindset/` | マインドセット | AI対話のスタンス設定 |
 
 ## プロンプト一覧
 
@@ -36,6 +37,12 @@
 | [code-review.md](development/code-review.md) | コードレビュー |
 | [commit-message-generator.md](development/commit-message-generator.md) | コミットメッセージ生成 |
 | [branch-name-generator.md](development/branch-name-generator.md) | ブランチ名生成 |
+
+### mindset/（マインドセット）
+
+| プロンプト | 用途 |
+|-----------|------|
+| [no-sugarcoating.md](mindset/no-sugarcoating.md) | 忖度無しの正直なフィードバックを求める |
 
 ---
 
