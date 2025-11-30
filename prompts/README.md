@@ -35,6 +35,7 @@
 | [mvp-spec-generator.md](development/mvp-spec-generator.md) | MVP仕様書の作成 |
 | [code-review.md](development/code-review.md) | コードレビュー |
 | [commit-message-generator.md](development/commit-message-generator.md) | コミットメッセージ生成 |
+| [branch-name-generator.md](development/branch-name-generator.md) | ブランチ名生成 |
 
 ---
 

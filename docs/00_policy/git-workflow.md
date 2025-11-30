@@ -240,4 +240,10 @@ git fetch origin
 ## 参考
 
 - [Conventional Commits](https://www.conventionalcommits.org/)
-- コミットメッセージ生成: `.cursor/rules/generate-commit-message.mdc` を使用
+
+### Cursorカスタムコマンド
+
+| コマンド | 用途 |
+|----------|------|
+| `/create-branch` | ブランチ名を生成して作成・移動 |
+| `/generate-commit-message` | コミットメッセージを生成 |
