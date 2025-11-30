@@ -1,7 +1,7 @@
 ---
 title: Git運用フロー
 created: 2025-01-01
-updated: 2025-01-01
+updated: 2025-11-30
 status: approved
 ---
 
@@ -42,7 +42,10 @@ git checkout -b feature/add-persona
 
 # 3. 作業・コミット
 git add .
-git commit -m "[docs] ペルソナを追加"
+git commit -m "docs: ペルソナを追加
+
+- ペルソナAの基本情報を定義
+- 課題と目標を記載"
 
 # 4. mainにマージ
 git checkout main
@@ -61,7 +64,9 @@ git branch -d feature/add-persona
 # mainで直接作業（typo修正など）
 git checkout main
 git add .
-git commit -m "[fix] typo修正"
+git commit -m "fix: typo修正
+
+- hypothesis.mdの誤字を修正"
 git push origin main
 ```
 
@@ -75,7 +80,12 @@ git checkout -b feature/pivot-strategy
 
 # 3. 作業・コミット
 git add .
-git commit -m "[strategy] ピボット案を追加"
+git commit -m "feat: ピボット案を追加
+
+- 新しい戦略案を3パターン記載
+- 各案のメリット・デメリットを比較
+
+Refs: #45"
 
 # 4. プッシュ
 git push origin feature/pivot-strategy
@@ -85,20 +95,85 @@ git push origin feature/pivot-strategy
 # 6. レビュー後にマージ
 ```
 
-## コミットの粒度
+## コミットメッセージ規約
 
-### 良いコミット
+### 基本フォーマット
+
+Conventional Commits形式を採用します。
+
 ```
-[docs] ペルソナAを追加
-[hypothesis] H1を検証済みに更新、結果を記載
-[strategy] MVP定義v2を作成
+<Prefix>: <サマリ（日本語、50文字以内）>
+
+- 変更内容1（箇条書き）
+- 変更内容2（箇条書き）
+
+Refs: #<Issue番号>（任意）
+BREAKING CHANGE: <内容>（任意）
 ```
 
-### 悪いコミット
+### Prefix一覧
+
+| Prefix | 用途 |
+|--------|------|
+| feat | 新機能の追加 |
+| fix | バグ修正 |
+| refactor | リファクタリング（挙動変更なし） |
+| perf | パフォーマンス改善 |
+| test | テスト追加/修正 |
+| docs | ドキュメント更新 |
+| build | ビルド/依存関係の変更 |
+| ci | CI関連の変更 |
+| chore | 雑務（ツール設定/スクリプト等） |
+| style | スタイルのみの変更 |
+| revert | 取り消し |
+
+スコープを指定する場合: `<Prefix>(scope): <サマリ>`
+
+### 良いコミットメッセージ
+
+```
+docs: ペルソナAを追加
+
+- 基本情報（年齢、役職、企業規模）を定義
+- 主要な課題を3点追加
+```
+
+```
+feat(hypothesis): H1を検証済みに更新
+
+- 検証結果を記載
+- 次のアクションを追加
+
+Refs: #12
+```
+
+```
+refactor: MVP定義v2を作成
+
+- 機能を優先度別に再整理
+- スコープ外の機能を明確化
+- 挙動の変更なし
+```
+
+### 悪いコミットメッセージ
+
 ```
 更新
 いろいろ修正
 WIP
+fix bug
+```
+
+### 破壊的変更がある場合
+
+Prefixに `!` を付けるか、フッターに `BREAKING CHANGE:` を記載します。
+
+```
+feat!: API認証方式をJWTに変更
+
+- 認証ミドルウェアを全面的に書き換え
+
+BREAKING CHANGE: 既存のAPIキー認証は廃止
 ```
 
 ## コンフリクト解決
@@ -162,5 +237,7 @@ git fetch origin
 - `.github/ISSUE_TEMPLATE/` にIssueテンプレートあり
 - `.github/PULL_REQUEST_TEMPLATE.md` にPRテンプレートあり
 
+## 参考
 
-
+- [Conventional Commits](https://www.conventionalcommits.org/)
+- コミットメッセージ生成: `.cursor/rules/generate-commit-message.mdc` を使用
