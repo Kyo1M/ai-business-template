@@ -1,147 +1,257 @@
 description: >-
-  このデザイン定義は、コンサルティングファーム水準の高品質なビジネスプレゼンテーションを生成するために設計されています。
-  「信頼感」と「明瞭さ」を重視し、クラインブルー（#002FA7）を基調色としたプロフェッショナルな配色を採用。
-  装飾を最小限に抑え、左上のタイトルとトップメッセージで結論を即座に伝える「読むのではなく見るスライド」を志向しています。
-  新規事業提案やデータ分析レポートなど、論理的かつ説得力が求められるビジネスシーンに最適化されたテンプレート定義です。
+  データサイエンスとAI開発を武器にする「実装型パートナー」のためのデザインシステム。
+  「外資系コンサルの論理性」と「テックスタートアップの疾走感」を融合。
+  信頼感のあるディープブルーを基調にしつつ、鮮やかなエレクトリックブルーと
+  コードライクなタイポグラフィで、技術力と先進性を表現します。
+  抽象的な概念よりも、具体的な成果物（MVP、KPI、コード）が主役となるデザインです。
 
 design_definition:
   meta:
-    theme_name: "Consulting_Professional_Blue"
-    concept: "Clear, Clean, Trustworthy"
-    target_audience: "Business Executives, Investors"
-    aspect_ratio: "16:9"
-    resolution: "1920x1080"
+    theme_name: "Tech_Accelerator_Blue"
+    concept: "Speed, Data-Driven, Implementation"
+    target_audience: "Seed Stage Founders, VCs"
+    visual_style: "Modern SaaS, Bento Grid, Clean Tech"
+
+  # スタイル一貫性のための「絶対ルール」。
+  # 生成AIに渡す際は、このセクションを最優先で厳守させること。
+  global_style_rules:
+    canvas:
+      aspect_ratio: "16:9"
+      size_px: { width: 1920, height: 1080 }
+      # NOTE: 背景は必ず真っ白で統一（カード等の面は surface を使用）。
+      background_color: "neutral.background"
+      safe_margin_px: { top: 72, right: 96, bottom: 72, left: 96 }
+      alignment_principle: "Left aligned / baseline aligned"
+
+    must:
+      - "背景は常に neutral.background（#FFFFFF）。例外なし。"
+      - "使用色は color_palette のトークン参照のみ（任意のカラーコード追加は禁止）。"
+      - "タイトル/トップメッセージ/本文/補足/ページ番号のタイポは typography.styles の指定に固定。"
+      - "1スライド1メッセージ。情報を詰め込みすぎない（余白を優先）。"
+      - "図形・カード・罫線の角丸/線幅/余白は spacing_scale と component_rules に統一。"
+
+    must_not:
+      - "背景をグレー/濃色にしない（全面ベタ塗りは禁止）。"
+      - "グラデーション/強いドロップシャドウ/3D/過度な光彩を使わない。"
+      - "フォントを勝手に増やさない（font_family 以外を使用しない）。"
+      - "装飾目的のイラストや、意味のないクリップアートを入れない。"
+      - "色数を増やさない（アクセントは原則 1 種類まで、信号色は必要箇所のみ）。"
 
   color_palette:
     primary:
-      name: "Klein Blue"
-      hex: "#002FA7"
-      usage: "Main Titles, Key Metrics, Primary Elements"
+      main: "#2563EB" # Electric Blue: テック感、スピード、知性
+      dark: "#0F172A" # Slate Dark: 堅実さ、背景としての深み
+      light: "#DBEAFE" # Pale Blue: カード背景、強調のベース
+    
     accent:
-      name: "Soft Red"
-      hex: "#E57373"
-      usage: "Critical Warnings, Negative Trends, Emphasis (w/ Bold)"
-    text:
-      main:
-        hex: "#4A4A4A" # Dark Gray
-        usage: "Body Text, Top Messages"
-      sub:
-        hex: "#888888" # Light Grayish
-        usage: "Footnotes, Sources, Captions"
-    background:
-      main: "#FFFFFF"
-      accent_area: "#F5F5F5" # For matrix headers or alternating rows
-    borders:
-      hex: "#CCCCCC" # Medium Gray
-      width: "1.5px"
-      radius: "4px"
+      growth: "#10B981" # Emerald Green: 成長、Go判断、成功
+      alert: "#F43F5E" # Rose Red: 撤退基準(No-Go)、課題、リスク
+      highlight: "#F59E0B" # Amber: 注意、重要なインサイト
+    
+    neutral:
+      # NOTE: text_main は primary.dark と一致させ、文字色のブレを防ぐ。
+      text_main: "#0F172A" # 視認性の高いダーク（本文の基本色）
+      text_sub: "#475569" # 補足情報用（薄すぎない）
+      background: "#FFFFFF"
+      surface: "#F8FAFC" # わずかに青みがかったグレー（カード背景用）
 
   typography:
     font_family:
-      jp: "Noto Sans JP"
-      en: "Helvetica Neue, Segoe UI"
-    rules:
+      headings: "Inter, Noto Sans JP, sans-serif"
+      body: "Noto Sans JP, sans-serif"
+      code_numbers: "JetBrains Mono, Roboto Mono, monospace" # 数字・KPI・技術用語用
+    
+    styles:
       slide_title:
-        size: "32pt"
+        # NOTE: 16:9 / 1920x1080 を前提に、過大になりにくい基準値へ微調整。
+        size: "34pt"
         weight: "Bold"
-        color: "primary"
-        alignment: "Left"
-        position: "Top Left"
+        color: "primary.main"
+        font_family: "headings"
+      
       top_message:
-        size: "24pt"
+        # NOTE: タイトルより一段小さく。視認性を保ちつつ詰まりを防ぐ。
+        size: "20pt"
         weight: "Medium"
-        color: "text_main"
-        position: "Directly below Title"
-        note: "Must convey the conclusion clearly"
+        color: "neutral.text_main"
+        line_height: "1.5"
+        border_left: "6px solid primary.main"
+        padding_left: "16px"
+        # トップメッセージの下に薄い灰色の罫線を引く（区切り・視線誘導）。
+        divider_bottom:
+          enabled: true
+          # NOTE: 罫線の幅は「トップメッセージのテキスト幅」に合わせる。
+          # （本文領域いっぱいに伸ばさない）
+          width_mode: "fit_text"
+          align: "text_left"
+          stroke_width: "1px"
+          color: "neutral.text_sub"
+          opacity: 0.20
+          margin_top: "12px"
+          padding_bottom: "12px"
+      
       body_text:
-        size: "18pt"
+        size: "16pt"
         weight: "Regular"
-        color: "text_main"
-        line_height: "1.6"
-      emphasis:
-        style: "Bold"
-        color_option: "accent" # For critical emphasis
+        color: "neutral.text_main"
+        line_height: "1.55"
+        font_family: "body"
+
+      caption_note:
+        size: "12pt"
+        weight: "Regular"
+        color: "neutral.text_sub"
+        line_height: "1.45"
+        font_family: "body"
+
+      section_label:
+        size: "12pt"
+        weight: "Bold"
+        color: "neutral.text_sub"
+        transform: "Uppercase"
+        letter_spacing: "2px"
+
+      kpi_metric:
+        font_family: "code_numbers"
+        size: "48pt"
+        weight: "Bold"
+        color: "primary.main"
+
       page_number:
         size: "12pt"
-        position: "Bottom Right"
+        weight: "Regular"
+        color: "neutral.text_sub"
+        font_family: "code_numbers"
 
-  layout_structure:
-    margins:
-      top: "80px"
-      bottom: "60px"
-      left: "80px"
-      right: "80px"
+  # 余白・間隔のスケールを固定し、レイアウトの「微妙な違い」を防ぐ。
+  spacing_scale:
+    xs: "8px"
+    sm: "12px"
+    md: "16px"
+    lg: "24px"
+    xl: "32px"
+    xxl: "48px"
+
+  layout_system:
+    container_style:
+      background_color: "neutral.surface"
+      border_radius: "12px"
+      padding: "24px"
+      shadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)"
+    
     grid:
       columns: 12
       gutter: "24px"
 
-  abstract_templates:
-    # 抽象化されたテンプレート定義
-    
-    cover:
-      id: "tpl_cover"
-      [cite_start]description: "提案書の顔となる表紙。タイトル、サブタイトル、日付、会社名を配置" # [cite: 1]
-      layout: "Center Aligned"
-      elements:
-        - type: "title"
-          style: "Center, Large"
-        - type: "subtitle"
-          style: "Center, Medium, Gray"
-        - type: "date_company"
-          style: "Bottom Center"
+  # 図形・カード・線などのコンポーネント規約（見た目のブレ防止）。
+  component_rules:
+    cards:
+      background: "neutral.surface"
+      border_radius: "12px"
+      border:
+        enabled: true
+        color: "neutral.text_sub"
+        opacity: 0.18
+        width: "1.5px"
+      shadow:
+        # NOTE: 影は「常に同じ」。強い影は禁止。
+        enabled: true
+        value: "0 4px 6px -1px rgba(0, 0, 0, 0.08)"
+    lines:
+      stroke_width: "2px"
+      stroke_color: "neutral.text_sub"
+      stroke_opacity: 0.35
+    icons:
+      style: "Flat / outline"
+      stroke_width: "2px"
+      color: "primary.main"
+    emphasis:
+      # NOTE: 強調は 2 種類まで（青=前進、赤/緑=判断）。乱用しない。
+      positive: "accent.growth"
+      negative: "accent.alert"
+      attention: "accent.highlight"
+      glow:
+        enabled: true
+        opacity: 0.18
+        blur_px: 12
+        spread_px: 0
 
-    standard_list:
-      id: "tpl_list"
-      [cite_start]description: "要点を箇条書きで列挙する基本レイアウト" # [cite: 95-98]
-      usage: "General Bullet Points, Agenda, Summary"
-      layout: "Title > Top Message > Body"
-      body_structure:
-        - type: "bullet_list"
-          max_items: 7
-          item_style: "1 line per item, max 2 lines"
+  # 出力（生成）後に必ず行う自己検証チェックリスト。
+  # これをプロンプトに含めると、破綻やブレが減る。
+  consistency_checklist:
+    visual:
+      - "スライド背景は #FFFFFF か？（全面が白、例外なし）"
+      - "使用色は color_palette のトークン参照のみか？（追加カラーコードなし）"
+      - "タイトルは typography.styles.slide_title の色/サイズ/太さか？"
+      - "トップメッセージは typography.styles.top_message のスタイルか？"
+      - "本文/補足/ページ番号は定義済みスタイル（body_text/caption_note/page_number）か？"
+      - "余白（safe_margin）を侵食していないか？"
+      - "強調色（赤/緑/黄）を乱用していないか？（必要箇所のみ）"
+    layout:
+      - "左揃え・ベースライン整列が崩れていないか？"
+      - "角丸/線幅/影が component_rules の値に統一されているか？"
+      - "1スライド1メッセージになっているか？（情報過多でないか）"
 
-    three_point_concept:
-      id: "tpl_3col_concept"
-      [cite_start]description: "課題や解決策を3つの要素で構造化して提示" # [cite: 7, 19]
-      usage: "Solutions, Challenges, Steps"
-      layout: "3 Columns Equal Width"
-      components:
-        - type: "icon"
-          style: "Flat, Line art, Primary Color"
-        - type: "heading"
-          style: "Bold, Centered"
-        - type: "description"
-          style: "Small Text"
+  templates:
+    # NOTE: templates は「参考（任意）」。
+    # スライド内容がこれらの型に合う場合のみ採用し、無理に当てはめない。
+    # 内容に最適なレイアウトが別にあるなら、それを優先する。
+    hero_mvp_launch:
+      id: "slide_01_hero"
+      layout: "Centered Hero with Floating Icons"
+      elements: ["Main Copy", "Icon 1: MVP", "Icon 2: Tracking", "Icon 3: KPI", "Icon 4: Report"]
 
-    comparison_matrix:
-      id: "tpl_comparison"
-      [cite_start]description: "競合他社や代替手段との比較を表形式で可視化" # [cite: 30-33]
-      usage: "Competitor Analysis, Before/After"
-      layout: "Table"
-      style:
-        header_row: "Primary Color Background (Optional) or Bold Text"
-        highlight_column: "Our Solution (Light Gray Background)"
-        cell_content: "Simple Text or Circle/Cross Icons"
+    pain_point_cards:
+      id: "slide_02_pain"
+      layout: "3 Column Cards (Bento Grid)"
+      card_style: {header: "Icon + Title", body: "Problem", footer: "Output Goal"}
 
-    process_flow:
-      id: "tpl_flow"
-      [cite_start]description: "プロセスやサイクル（PDCAなど）を時系列または循環図で表現" # [cite: 54-62]
-      usage: "Timeline, PDCA Cycle, Roadmap"
-      layout: "Horizontal or Circular Flow"
-      arrow_style: "Minimal, Gray"
-      step_style: "Primary Color Text for Step Name"
+    process_double_loop:
+      id: "slide_04_process"
+      visual: "Infinity Loop (Human x AI)"
+      elements: ["Left: Hypothesis", "Right: Coding", "Center: Velocity"]
 
-    split_visual:
-      id: "tpl_split"
-      [cite_start]description: "キーメッセージと図表（グラフ・概念図）を左右に配置" # [cite: 109-123]
-      usage: "Text + Chart/Image"
-      layout: "2 Columns (50/50 or 40/60)"
-      left: "Key Points (Bullet List)"
-      right: "Chart (Bar/Pie) or Schematic Diagram"
+    profile_bento_grid:
+      id: "slide_05_profile"
+      layout: "Asymmetric Grid"
+      areas: ["Photo & Role", "Mission", "Skill Stack", "Portfolio 1", "Portfolio 2"]
 
-  forbidden_rules:
-    - "No Gradients"
-    - "No Drop Shadows"
-    - "Max 3 Colors (excluding neutrals)"
-    - "No 3D Effects"
-    - "No decorative clip-arts"
+    pricing_scope_tiers:
+      id: "slide_07_08_pricing"
+      layout: "Pricing Table + Visual Aid (Pyramid/Circles)"
+      emphasis: "Plan B (Recommended)"
+
+    kpi_decision_tree:
+      id: "slide_09_decision"
+      visual: "Flowchart / Tree Diagram"
+      nodes: ["KPI Metric", "Success -> GO", "Insight -> PIVOT", "Fail -> NO-GO"]
+
+    timeline_sprint:
+      id: "slide_10_schedule"
+      visual: "Horizontal Gantt Chart"
+      style: "Clean bars with Decision Gates"
+
+  # 追加セクション: AI生成やデザイン実行時の具体的テクニック
+  execution_tips:
+    background_texture:
+      instruction: "背景は必ず白（#FFFFFF）のまま維持し、余白部分にのみ、ごく薄い色（不透明度3-6%）でコードスニペットやデータフロー図を配置する。"
+      purpose: "「実装力」と「エンジニアリング背景」を視覚的に暗示するため。"
+      example: "Next.jsのディレクトリ構造や、Pythonのデータ分析コードを背景パターンとして使用。"
+
+    data_visualization:
+      instruction: "金額、KPI、スケジュールの日付には必ず等幅フォント（Monospace）を使用する。"
+      purpose: "数字に対するプロフェッショナルな厳密さと、開発者らしさを強調するため。"
+      example: "「¥800,000」や「CVR 2.5%」の表記に JetBrains Mono を適用。"
+
+    ui_mockups:
+      instruction: "具体的な画面デザインではなく、ワイヤーフレームに近い「抽象化されたブロック」でアプリを表現する。"
+      purpose: "デザインの細部ではなく、「機能的なスコープ」や「構造」に焦点を当てるため。"
+      example: "グレーの角丸長方形とスケルトンスクリーンを用いて、ログイン画面やダッシュボードを模式化する。"
+
+    dynamic_accents:
+      instruction: "「Goサイン（緑）」や「アラート（赤）」は component_rules.emphasis の glow 規約に従い、控えめな発光（低不透明度・固定ブラー）で統一する。"
+      purpose: "モダンなSaaSのUIトレンドを取り入れ、古臭い業務システム感を払拭するため。"
+
+    slide_tone:
+      instruction: "情熱（Passion）と論理（Logic）のバランスを意識する。テキストは断定的に短く、しかし背景や装飾でエネルギーを感じさせる。"
+      purpose: "スタートアップ起業家に対して「頼れる兄貴分」のようなパートナーシップを感じてもらうため。"
