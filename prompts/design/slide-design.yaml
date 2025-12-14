@@ -35,7 +35,7 @@ design_definition:
       - "グラデーション/強いドロップシャドウ/3D/過度な光彩を使わない。"
       - "フォントを勝手に増やさない（font_family 以外を使用しない）。"
       - "装飾目的のイラストや、意味のないクリップアートを入れない。"
-      - "色数を増やさない（アクセントは原則 1 種類まで、信号色は必要箇所のみ）。"
+      - "色数を増やさない（primary は固定。信号色（growth/alert/highlight）は必要最小限。通常は 1 スライドにつき 1 種、同時使用は最大 2 種まで）。"
 
   color_palette:
     primary:
@@ -137,7 +137,8 @@ design_definition:
       background_color: "neutral.surface"
       border_radius: "12px"
       padding: "24px"
-      shadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)"
+      # NOTE: shadow は「常に同じ」。cards と同一値に統一する。
+      shadow: "0 4px 6px -1px rgba(0, 0, 0, 0.08)"
     
     grid:
       columns: 12
@@ -166,7 +167,7 @@ design_definition:
       stroke_width: "2px"
       color: "primary.main"
     emphasis:
-      # NOTE: 強調は 2 種類まで（青=前進、赤/緑=判断）。乱用しない。
+      # NOTE: 強調（信号色）は 3 種（growth/alert/highlight）を定義するが、1スライド内の同時使用は最大 2 種まで。通常は 1 種に抑える。
       positive: "accent.growth"
       negative: "accent.alert"
       attention: "accent.highlight"
@@ -186,7 +187,7 @@ design_definition:
       - "トップメッセージは typography.styles.top_message のスタイルか？"
       - "本文/補足/ページ番号は定義済みスタイル（body_text/caption_note/page_number）か？"
       - "余白（safe_margin）を侵食していないか？"
-      - "強調色（赤/緑/黄）を乱用していないか？（必要箇所のみ）"
+      - "強調色（accent.growth/accent.alert/accent.highlight）を乱用していないか？（通常 1 種、同時使用最大 2 種）"
     layout:
       - "左揃え・ベースライン整列が崩れていないか？"
       - "角丸/線幅/影が component_rules の値に統一されているか？"
