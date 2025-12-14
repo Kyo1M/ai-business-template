@@ -1,0 +1,147 @@
+description: >-
+  このデザイン定義は、コンサルティングファーム水準の高品質なビジネスプレゼンテーションを生成するために設計されています。
+  「信頼感」と「明瞭さ」を重視し、クラインブルー（#002FA7）を基調色としたプロフェッショナルな配色を採用。
+  装飾を最小限に抑え、左上のタイトルとトップメッセージで結論を即座に伝える「読むのではなく見るスライド」を志向しています。
+  新規事業提案やデータ分析レポートなど、論理的かつ説得力が求められるビジネスシーンに最適化されたテンプレート定義です。
+
+design_definition:
+  meta:
+    theme_name: "Consulting_Professional_Blue"
+    concept: "Clear, Clean, Trustworthy"
+    target_audience: "Business Executives, Investors"
+    aspect_ratio: "16:9"
+    resolution: "1920x1080"
+
+  color_palette:
+    primary:
+      name: "Klein Blue"
+      hex: "#002FA7"
+      usage: "Main Titles, Key Metrics, Primary Elements"
+    accent:
+      name: "Soft Red"
+      hex: "#E57373"
+      usage: "Critical Warnings, Negative Trends, Emphasis (w/ Bold)"
+    text:
+      main:
+        hex: "#4A4A4A" # Dark Gray
+        usage: "Body Text, Top Messages"
+      sub:
+        hex: "#888888" # Light Grayish
+        usage: "Footnotes, Sources, Captions"
+    background:
+      main: "#FFFFFF"
+      accent_area: "#F5F5F5" # For matrix headers or alternating rows
+    borders:
+      hex: "#CCCCCC" # Medium Gray
+      width: "1.5px"
+      radius: "4px"
+
+  typography:
+    font_family:
+      jp: "Noto Sans JP"
+      en: "Helvetica Neue, Segoe UI"
+    rules:
+      slide_title:
+        size: "32pt"
+        weight: "Bold"
+        color: "primary"
+        alignment: "Left"
+        position: "Top Left"
+      top_message:
+        size: "24pt"
+        weight: "Medium"
+        color: "text_main"
+        position: "Directly below Title"
+        note: "Must convey the conclusion clearly"
+      body_text:
+        size: "18pt"
+        weight: "Regular"
+        color: "text_main"
+        line_height: "1.6"
+      emphasis:
+        style: "Bold"
+        color_option: "accent" # For critical emphasis
+      page_number:
+        size: "12pt"
+        position: "Bottom Right"
+
+  layout_structure:
+    margins:
+      top: "80px"
+      bottom: "60px"
+      left: "80px"
+      right: "80px"
+    grid:
+      columns: 12
+      gutter: "24px"
+
+  abstract_templates:
+    # 抽象化されたテンプレート定義
+    
+    cover:
+      id: "tpl_cover"
+      [cite_start]description: "提案書の顔となる表紙。タイトル、サブタイトル、日付、会社名を配置" # [cite: 1]
+      layout: "Center Aligned"
+      elements:
+        - type: "title"
+          style: "Center, Large"
+        - type: "subtitle"
+          style: "Center, Medium, Gray"
+        - type: "date_company"
+          style: "Bottom Center"
+
+    standard_list:
+      id: "tpl_list"
+      [cite_start]description: "要点を箇条書きで列挙する基本レイアウト" # [cite: 95-98]
+      usage: "General Bullet Points, Agenda, Summary"
+      layout: "Title > Top Message > Body"
+      body_structure:
+        - type: "bullet_list"
+          max_items: 7
+          item_style: "1 line per item, max 2 lines"
+
+    three_point_concept:
+      id: "tpl_3col_concept"
+      [cite_start]description: "課題や解決策を3つの要素で構造化して提示" # [cite: 7, 19]
+      usage: "Solutions, Challenges, Steps"
+      layout: "3 Columns Equal Width"
+      components:
+        - type: "icon"
+          style: "Flat, Line art, Primary Color"
+        - type: "heading"
+          style: "Bold, Centered"
+        - type: "description"
+          style: "Small Text"
+
+    comparison_matrix:
+      id: "tpl_comparison"
+      [cite_start]description: "競合他社や代替手段との比較を表形式で可視化" # [cite: 30-33]
+      usage: "Competitor Analysis, Before/After"
+      layout: "Table"
+      style:
+        header_row: "Primary Color Background (Optional) or Bold Text"
+        highlight_column: "Our Solution (Light Gray Background)"
+        cell_content: "Simple Text or Circle/Cross Icons"
+
+    process_flow:
+      id: "tpl_flow"
+      [cite_start]description: "プロセスやサイクル（PDCAなど）を時系列または循環図で表現" # [cite: 54-62]
+      usage: "Timeline, PDCA Cycle, Roadmap"
+      layout: "Horizontal or Circular Flow"
+      arrow_style: "Minimal, Gray"
+      step_style: "Primary Color Text for Step Name"
+
+    split_visual:
+      id: "tpl_split"
+      [cite_start]description: "キーメッセージと図表（グラフ・概念図）を左右に配置" # [cite: 109-123]
+      usage: "Text + Chart/Image"
+      layout: "2 Columns (50/50 or 40/60)"
+      left: "Key Points (Bullet List)"
+      right: "Chart (Bar/Pie) or Schematic Diagram"
+
+  forbidden_rules:
+    - "No Gradients"
+    - "No Drop Shadows"
+    - "Max 3 Colors (excluding neutrals)"
+    - "No 3D Effects"
+    - "No decorative clip-arts"
